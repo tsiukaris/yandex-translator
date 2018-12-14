@@ -1,3 +1,5 @@
+package tsiukaris;
+
 import javax.net.ssl.HttpsURLConnection;
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -37,10 +39,9 @@ public class Main {
             //parse response body
             InputStream response = connection.getInputStream();
             String jsonText = new Scanner(response).nextLine();
-
+//java -jar target/yandex-translator-1.0-SNAPSHOT.jar
             //hardcoded start and end of translated phrase
             String translated = jsonText.substring(jsonText.indexOf("[") + 2, jsonText.indexOf("]") - 1);
-
             System.out.println(translated);
 
         } catch (MalformedURLException m){
